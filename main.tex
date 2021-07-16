@@ -5,7 +5,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,12pt, margin=2in]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -19,8 +19,9 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{indentfirst}
+\usepackage{ragged2e}
 \input{glyphtounicode}
-
+\justifying
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -43,9 +44,9 @@
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
+\addtolength{\textwidth}{0.5in}
 \addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\textheight}{0.5in}
 
 \urlstyle{same}
 
@@ -56,7 +57,7 @@
 % Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+}{}{0em}{}[\color{black}\titlerule \vspace{-2pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -74,31 +75,31 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-8pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-9pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-9pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-8pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.05in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,68 +122,96 @@
     
 \end{center}
 
-
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {The University of Texas at Austin, Austin, TX, USA}{Aug. 2018 -- May 2020}
-      {Master of Science in Operation Research and Industrial Engineering}{GPA: 3.59/4.00}
+      {Master of Science in Operation Research and Industrial Engineering}{\textbf{GPA: 3.59/4.00}}
     \resumeSubheading
       {Birla Institute of Technology and Science, Pilani, India}{Aug. 2013 -- May 2017}
-      {Bachelor of Engineering in Manufacturing Engineering}{GPA: 8.18/10.00}
+      {Bachelor of Engineering (Hons.) in Manufacturing Engineering}{\textbf{GPA: 8.18/10.00}}
   \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}\hspace{1.2cm}{Python, R, Java, MySQL, MATLAB, HTML} \\
+     \textbf{Packages}\hspace{1.5cm}{Numpy, Pandas, Matplotlib, Keras, TensorFlow, Plotly, Scikit-learn, SciPy, Seaborn} \\
+     \textbf{Technologies}\hspace{0.8cm}{Spark, Hadoop, Linux, Version control, Shell Scripting}\\
+     \textbf{Statistical Skills}\hspace{0.18cm}{Regression, Classification, Clustering, Time Series Forecasting, Reinforcement} \\
+     \hspace{1.4cm}\hspace{1.9cm}{Learning, Anomaly Detection, Deep Learning, A/B testing, Hypothesis Testing}\\
+     \textbf{Software}\hspace{1.6cm}{Jupyter Notebook, PyCharm, RStudio, Processing, Eclipse}
+    }}
+ \end{itemize}
 
 
 %-----------EXPERIENCE-----------
+
 \section{Experience}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Data Scientist II}{June 2020 -- Present}
-      {SparkCognition}{Austin, TX}
+      {SparkCognition}{June 2020 -- Present (1 yr)}
+      {Data Scientist II}{Austin, TX}
       \resumeItemListStart
-        \resumeItem{Working on building a predictive maintenance model for Pepsi to detect machine failures for Mountain Top plant}
+        \resumeItem{\textbf{Predictive Maintenance using AutoEncoder:}}
+        \resumeItemListStart
+            \resumeItem{Improved production efficiency by 2.5\% for a Fortune 50 global beverage manufacture by predicting faults with significant lead time}
+            \resumeItem{Deployed model using Vanilla AutoEncoder to detect anomalies and calculated rolling mean of RMSE values to denoise any false predictions}
+            \resumeItem{Rolling mean of RMSE values were further used to perform Wald's Sequential Ratio Probability Test (SPRT) to generate final alerts}
+            \vspace{0.1in}
+        \resumeItemListEnd
+        % \resumeItem{Working on building a predictive maintenance model for Pepsi to detect machine failures for Mountain Top plant}
         % \resumeItem{Built an unsupervised Anomaly detection model using AutoEncoder for Saudi Aramco to detect faults in compressor and water injection pump}
-        \resumeItem{Engineered information out of 1.2GB, complex and, unstructured dataset for Saudi Aramco to build a anomaly detection model using AutoEncoder}
-        \resumeItem{Built a Time Series Forecasting model for Ardor Energy using Dual Attention based RNN model achieving a MAPE of 1.98\% beating the previous best MAPE of 2.1\% saving \$1.4M for the company}
-        \resumeItem{Working on the development of SparkPredict which is the AI-based predictive maintenance product of the company} 
+        \resumeItem{\textbf{Unsupervised dimensionality reduction and clustering: }}
+        \resumeItemListStart
+            \resumeItem{Engineered information out of 1.2GB, complex and unstructured dataset for a large oil & gas company to build a predictive maintenance tool that would raise alarm 2.5 hrs before component failure}
+            \resumeItem{Trained model using the clustering pipeline that involves Isolation forest, PCA, HDBSCAN, Random Forest algorithms to generate a risk score that alerts for an anomaly}
+            \vspace{0.1in}
+        \resumeItemListEnd
+        \resumeItem{\textbf{Time series analysis for Demand Forecasting: }}
+        \resumeItemListStart
+            \resumeItem{Built a Time Series Forecasting model for a wind energy company using Dual Attention based RNN model to predict the energy demand for next 24 hrs}
+            \resumeItem{Model achieved a MAPE of 1.98\% beating the previous best MAPE of 2.1\%}
+            \vspace{0.1in}
+        \resumeItemListEnd
+        % \resumeItem{\textbf{SparkPredict:}Worked on the development of SparkPredict which is the AI-based predictive maintenance product of the company} 
       \resumeItemListEnd
 
     \resumeSubheading
-      {Artificial Intelligence Research Assistant}{May 2019 -- May 2020}
-      {The University of Texas at Austin}{Austin, TX}
+      {Artificial Intelligence Lab}{May 2019 -- May 2020 (1 yr)}
+      {Graduate Research Assistant, The University of Texas at Austin}{Austin, TX}
       \resumeItemListStart
-        \resumeItem{Worked under the supervision of Dr. Peter Stone on developing an environment for implementing multi-agent deep reinforcement learning policies on RoboCup Rescue Simulator}
+        \resumeItem{Worked under the supervision of Dr. Peter Stone to develop an environment for implementing multi-agent deep reinforcement learning policies on RoboCup Rescue Simulator}
         % \resumeItem{Project involved integration of functionalities to several thousand lines of code in RoboCup Rescue simulator}
-        \resumeItem{Trained algorithms like Proximal Policy Optimization (PPO) and Deep Q-networks (DQN) using OpenAI’s Gym on
-        different sized maps to find out which one works better in that particular setting}
-        \resumeItem{Final model accomplished tasks in 18\% lesser time as compared to the previous best model}
+        \resumeItem{Built a model using Proximal Policy Optimization (PPO) and Deep Q-networks (DQN) using OpenAI’s Gym on different sized maps that accomplished tasks in 18\% lesser time compared to previous best model \href{https://towardsdatascience.com/multiagent-reinforcement-learning-for-robocup-rescue-simulator-17773553f46}{(Link)}}
+        \vspace{0.5in}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Graduate Engineer Trainee}{Jan 2017 -- June 2018}
-      {Weir Minerals}{Bangalore, India}
+      {Weir Minerals}{Jan 2017 -- June 2018 (1.5 yr)}
+      {Graduate Engineer Trainee}{Bangalore, India}
       \resumeItemListStart
         \resumeItem{Developed and validated component scenario to reduce part tooling estimate by 20\% resulting in annual savings of \$4.2M}
-        \resumeItem{Wrote SQL queries to extract models and identify cost drivers in machine component design}
+        \resumeItem{Wrote SQL queries to extract CAD models and identify cost drivers in machine component design}
         \resumeItem{Developed weekly report for the executives which helped discover actionable insights and KPI’s in Tableau}
       \resumeItemListEnd
 
 
   \resumeSubHeadingListEnd
-
-%-----------ACHIEVEMENTS-------
-\section{Achievements}
-    \resumeSubHeadingListStart
-          \resumeItemListStart
-            \resumeItem{Winner of UT Austin’s Data Hack 2019 organized by Microsoft Azure, Oracle and ML DS group at UT Austin}
-            \resumeItem{Published Machine Learning articles on Medium.com which garnered more than 50k+ views}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
 %-----------PROJECTS-----------
 \section{Projects}
+    
     \resumeSubHeadingListStart
+    \resumeProjectHeading
+          {\textbf{Predicting Click Through Rate for an Ad Agency website} \href{https://towardsdatascience.com/predicting-click-through-rate-for-a-website-7cd2a892d26e}{(Link)}}{Aug 2018 -- Dec 2018}
+          \resumeItemListStart
+            \resumeItem{Built a ML model using Stacked Ensemble of XGBoost, Random Forest and LightGBM to accurately predict the number of customers visiting an Ad Agency website}
+            \resumeItem{Analyzed and processed data using various data visualization tools like Matplotlib and Seaborn, and performed hyperparameter tuning using Bayesian Optimizer}
+            \resumeItem{Ranked 6th among a class of 400 students in the In-class Kaggle Competition achieving an AUC score of 0.5848}
+          \resumeItemListEnd
     %   \resumeProjectHeading
     %       {\textbf{Zinmat Insurance Recommendation Challenge} $|$ \emph{Python}}{Aug 2020 -- Sept 2020}
     %       \resumeItemListStart
@@ -190,45 +219,34 @@
     %         \resumeItem{TODO}
     %         \resumeItem{TODO}
     %       \resumeItemListEnd
-    %   \resumeProjectHeading
-    %       {\textbf{Movie Recommendation System} $|$ \emph{Python}}{Aug 2019 -- Dec 2019}
-    %       \resumeItemListStart
-    %         \resumeItem{Built a model to recommend movies to a new user using Multi-Armed Bandit algorithms like Epsilon Greedy, UCB}
-    %         \resumeItem{Implemented Collaborative Filtering to fill sparse user rating matrix and clustered them using K-means clustering}
-    %         \resumeItem{Thompson Sampling performed best with normalized discounted cumulative gain (NDCG) score of 0.94}
-    %       \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Anomaly Detection using Semi-supervised Hybrid Model Approach} $|$ \emph{Python}}{Jan 2019 -- May 2019}
+          {\textbf{Movie Recommendation System} \href{https://towardsdatascience.com/solving-cold-user-problem-for-recommendation-system-using-multi-armed-bandit-d36e42fe8d44}{(Link)}}{Aug 2019 -- Dec 2019}
           \resumeItemListStart
-            \resumeItem{Built a semi supervised hybrid model in Tensorflow using Auto Encoder and KNN for early breast cancer detection}
-            \resumeItem{Compared and evaluated results with One-Class SVM in terms of their F1 scores}
-            \resumeItem{Final model improved detection accuracy and reduced computational complexity}
+            \resumeItem{Built a model to recommend movies to a new user using Multi-Armed Bandit algorithms like Epsilon Greedy, UCB}
+            \resumeItem{Implemented Collaborative Filtering to fill sparse user rating matrix and clustered them using K-means clustering to get a final Normalized Discounted Cumulative Gain (NDCG) score of 0.94 using Thompson Sampling}
+            % \resumeItem{Thompson Sampling performed best with }
           \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Predicting Click Through Rate for an Ad Agency} $|$ \emph{Python}}{Aug 2018 -- Dec 2018}
+        \resumeSubHeadingListEnd
+    %   \resumeProjectHeading
+    %       {\textbf{Anomaly Detection using Semi-supervised Hybrid Model} \href{https://towardsdatascience.com/detecting-the-onset-of-machine-failure-using-anomaly-detection-techniques-d2f7a11eb809}{(Link)}}{Jan 2019 -- May 2019}
+    %       \resumeItemListStart
+    %         \resumeItem{Built a semi supervised hybrid model in Tensorflow using Auto Encoder and KNN for early breast cancer detection}
+    %         \resumeItem{Compared and evaluated results with One-Class SVM in terms of their F1 scores}
+    %         \resumeItem{Final model improved detection accuracy and reduced computational complexity}
+    %       \resumeItemListEnd
+
+%-----------ACHIEVEMENTS-------
+\section{Achievements}
+    \resumeSubHeadingListStart
           \resumeItemListStart
-            \resumeItem{Developed machine learning model to accurately predict the number of customers visiting an Ad Agency}
-            \resumeItem{Analyzed and processed data using various data visualization tools like Seaborn, feature engineering tools
-and performed hyperparameter tuning using Bayesian Optimizer}
-            \resumeItem{Ranked 6th among a class of 400 students in the In-class Kaggle Competition achieving an AUC score of 0.944}
+            % \resumeItem{Built a semi supervised hybrid model using AutoEncoder and KNN for early breast detection and compared the results with One-Class SVM resulting in an improved detection accuracy and reduced computational complexity}
+            % \resumeItem{Built a model to recommend movies to a new user using Multi-Armed Bandit algorithms like Epsilon Greedy, UCB. Implemented Collaborative Filtering to fill sparse user rating matrix and clustered them using K-means clustering. Thompson Sampling performed best with normalized discounted cumulative gain (NDCG) score of 0.94}
+            % \resumeItem{Predicted the Click Through Rate (CTR) for an Ad Agency using Synthetic Minority Oversampling Technique (SMOTE) for solving the issue of unbalanced classes in the data and Bayesian Optimizer for hyperparameter tuning resulting in an AUC score of 0.94}
+            \resumeItem{Winner of UT Austin’s Data Hack 2019 jointly organized by Microsoft Azure, Oracle and ML DS group at UT Austin \href{https://devpost.com/software/austin-b-cycle}{(Link)}}
+            \resumeItem{Published \href{https://medium.com/@animeshgoyal}{Machine Learning articles} on Medium.com which garnered 50k+ views}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
-
-
 %
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}\hspace{1.2cm}{Python, R, Java, MySQL, MATLAB, HTML} \\
-     \textbf{Packages}\hspace{1.45cm}{Numpy, Pandas, Matplotlib, Keras, TensorFlow, Fastai, Plotly, Scikit-learn, SciPy, Seaborn} \\
-     \textbf{Technologies}\hspace{0.8cm}{Spark, Hadoop, Linux, Version control, Shell Scripting}\\
-     \textbf{Statistical Skills}\hspace{0.18cm}{Regression, Classification, Clustering, Dimensionality Reduction, Hypothesis Testing} \\
-     \textbf{Courses}\hspace{1.6cm}{Data Science lab, Time Series Analysis, Linear Statistical Models, Applied Probability}
-    }}
- \end{itemize}
 
-
-%-------------------------------------------
 \end{document}
